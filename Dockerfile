@@ -21,7 +21,7 @@
 
 # CMD ["http-server", "storybook-static", "-p 8083"]
 
-FROM node:latest
+FROM node:20.11.1
 
 WORKDIR /usr/src/app
 
