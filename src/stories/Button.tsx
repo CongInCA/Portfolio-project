@@ -50,3 +50,4 @@ export const Button = ({
     </button>
   );
 };
+const someVariable = 123;const anotherVariable = "hello";
