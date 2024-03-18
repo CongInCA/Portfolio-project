@@ -11,7 +11,7 @@ describe("Label component", () => {
 
   it("renders with custom color", () => {
     const { getByText } = render(
-      <Label text="Custom Color Label" color="blue" />
+      <Label text="Custom Color Label" color="blue" />,
     );
     const label = getByText("Custom Color Label");
     expect(label).toBeInTheDocument();
@@ -20,7 +20,7 @@ describe("Label component", () => {
 
   it("renders with custom font size", () => {
     const { getByText } = render(
-      <Label text="Custom Font Size Label" fontSize="20px" />
+      <Label text="Custom Font Size Label" fontSize="20px" />,
     );
     const label = getByText("Custom Font Size Label");
     expect(label).toBeInTheDocument();

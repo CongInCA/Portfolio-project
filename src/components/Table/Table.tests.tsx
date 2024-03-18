@@ -11,7 +11,7 @@ test("Table is visible", () => {
         { Name: "Alice", Age: 30, City: "Los Angeles" },
         { Name: "Bob", Age: 28, City: "Chicago" },
       ]}
-    />
+    />,
   );
   const tableHeader = getByText("Name");
   const tableData = getByText("John");
@@ -28,7 +28,7 @@ test("Background color changes when Table is disabled", () => {
         { Name: "Alice", Age: 30, City: "Los Angeles" },
         { Name: "Bob", Age: 28, City: "Chicago" },
       ]}
-    />
+    />,
   );
 
   const tableContainer = container.firstChild as HTMLElement;
@@ -43,7 +43,7 @@ test("Background color changes when Table is disabled", () => {
         { Name: "Bob", Age: 28, City: "Chicago" },
       ]}
       disabled
-    />
+    />,
   );
 
   expect(tableContainer).toHaveStyle("opacity: 0.7;");

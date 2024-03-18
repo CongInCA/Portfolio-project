@@ -11,7 +11,7 @@ describe("Text component", () => {
 
   it("renders with custom color", () => {
     const { getByText } = render(
-      <Text content="Custom Color Text" color="blue" />
+      <Text content="Custom Color Text" color="blue" />,
     );
     const text = getByText("Custom Color Text");
     expect(text).toBeInTheDocument();
@@ -20,7 +20,7 @@ describe("Text component", () => {
 
   it("renders with custom font size", () => {
     const { getByText } = render(
-      <Text content="Custom Font Size Text" fontSize="20px" />
+      <Text content="Custom Font Size Text" fontSize="20px" />,
     );
     const text = getByText("Custom Font Size Text");
     expect(text).toBeInTheDocument();

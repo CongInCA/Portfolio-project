@@ -4,7 +4,7 @@ import Card from "./Card";
 
 test("Card is visible", () => {
   const { getByText } = render(
-    <Card title="Test Card" content="This is a test card." />
+    <Card title="Test Card" content="This is a test card." />,
   );
   const cardTitle = getByText("Test Card");
   const cardContent = getByText("This is a test card.");
@@ -14,7 +14,7 @@ test("Card is visible", () => {
 
 test("Background color changes when Card is disabled", () => {
   const { container, rerender } = render(
-    <Card title="Test Card" content="This is a test card." />
+    <Card title="Test Card" content="This is a test card." />,
   );
 
   const cardContainer = container.firstChild as HTMLElement;
