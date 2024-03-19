@@ -2,8 +2,17 @@
 # . "$(dirname $0)/_/husky.sh"
 # yarn lint-staged
 #!/usr/bin/env sh
-echo debugging the pre-commit hook 1>&2
-exit 1
+# echo debugging the pre-commit hook 1>&2
+# exit 1
 # . "$(dirname -- "$0")/_/husky.sh"
 
 # npm test
+#!/bin/sh
+
+# Run linting
+npm run lint
+
+# Run Prettier
+npm run format
+
+# Add any other commands or checks you want to perform before committing
