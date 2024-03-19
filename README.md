@@ -13,7 +13,7 @@ This is a UI component library/toolkit built with React and Storybook.
 
 1. Clone the repository:
    git clone https://github.com/CongInCA/Test_components.git
-2. Locate to diretory:
-   cd Test_components
-3. Install all dependencies:
-   npm install
+2. Build a docker image:
+   docker build -t Cong_Chen_coding_assignment13 .
+3. Run a docker image:
+   docker run -p 8018:8018 Cong_Chen_coding_assignment13
