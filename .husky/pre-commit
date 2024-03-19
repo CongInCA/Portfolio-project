@@ -1,4 +1,10 @@
 #!/bin/sh
-. "$(dirname $0)/_/husky.sh"
 
-npm run lint && npm run format && git add .
+# Run linting
+npm run lint
+
+# Run code formatting
+npm run format
+
+# Add changes to staging area
+git add .
