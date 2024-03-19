@@ -21,23 +21,53 @@
 
 # CMD ["http-server", "storybook-static", "-p 8083"]
 
+# FROM node:20.11.1
+
+# WORKDIR /usr/src/app
+
+# COPY package*.json ./
+
+# RUN npm install
+
+# RUN npm install --save-dev husky prettier eslint
+
+# RUN npx husky install
+
+# RUN npx husky add .husky/pre-commit "npm run format && npm run lint"
+
+# EXPOSE 8018
+
+# CMD ["npm", "start"]
+# Use official Node.js 14 image as the base image
 FROM node:20.11.1
 
+# Set the working directory
 WORKDIR /usr/src/app
 
+# Copy package.json and package-lock.json to the working directory
 COPY package*.json ./
 
+# Install project dependencies
 RUN npm install
 
-RUN npm install --save-dev husky prettier eslint
+# Copy project files to the working directory
+COPY . .
 
+# Add Husky package with version limited to 4.3.8
+RUN npm install husky@4.3.8 --save-dev
+
+# Configure Husky pre-commit hook
 RUN npx husky install
 
-RUN npx husky add .husky/pre-commit "npm run format && npm run lint"
+# Set Git hooks path to .git/hooks
+RUN git config --local core.hooksPath .git/hooks
 
+# Expose port, adjust based on your project requirements
 EXPOSE 8018
 
+# Run the application
 CMD ["npm", "start"]
+
 # Define the command to run your application
 # CMD ["npm", "start"]
 
