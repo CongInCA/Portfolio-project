@@ -11,4 +11,9 @@ This is a UI component library/toolkit built with React and Storybook.
 
 ### Installation
 
-Github: https://github.com/CongInCA/Test_components.git
+1. Clone the repository:
+   git clone https://github.com/CongInCA/Test_components.git
+2. Locate to diretory:
+   cd Test_components
+3. Install all dependencies:
+   npm install

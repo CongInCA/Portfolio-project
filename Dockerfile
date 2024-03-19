@@ -66,8 +66,11 @@ RUN git config --local core.hooksPath .git/hooks
 EXPOSE 8018
 
 # Run the application
-CMD ["npm", "start"]
+RUN npm run build-storybook
 
+RUN npm install -g http-server
+
+CMD ["http-server", "storybook-static", "-p 8018"]
 # Define the command to run your application
 # CMD ["npm", "start"]
 
