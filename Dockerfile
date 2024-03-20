@@ -56,9 +56,6 @@ COPY . .
 # Add Husky package with version limited to 4.3.8
 RUN npm install husky@4.3.8 --save-dev
 
-# Configure Husky pre-commit hook
-RUN npx husky install
-
 # Set Git hooks path to .git/hooks
 RUN git config --local core.hooksPath .git/hooks
 
