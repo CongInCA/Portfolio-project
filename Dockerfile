@@ -32,4 +32,4 @@ RUN npm install -D react-refresh@0.11.0
 RUN npm install -g http-server
 
 # Run http-server with port 5575
-CMD ["http-server", "storybook-static", "-p", "5575"]
+CMD ["http-server", "build", "-p", "5575"]
