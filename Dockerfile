@@ -23,7 +23,7 @@ RUN git config --local core.hooksPath .git/hooks
 EXPOSE 5575
 
 # Build Storybook
-RUN npm run build-storybook
+# RUN npm run build-storybook
 
 # Install react-refresh
 RUN npm install -D react-refresh@0.11.0
