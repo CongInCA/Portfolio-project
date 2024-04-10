@@ -28,7 +28,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 8083 -c .storybook",
-    "build-storybook": "build-storybook --output-dir .storybook-static"
+    "build-storybook": "storybook build"
   },
   "husky": {
     "hooks": {
