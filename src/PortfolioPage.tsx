@@ -36,6 +36,7 @@ function PortfolioPage() {
                 (window.location.href =
                   "https://github.com/CongInCA/Component-Library.git")
               }
+              className="storybook-button--primary"
             />
           </p>
           <p>Tech List: JavaScript, TypeScript, React</p>
@@ -57,6 +58,7 @@ function PortfolioPage() {
                 (window.location.href =
                   "https://github.com/CongInCA/Test_components.git")
               }
+              className="storybook-button--primary"
             />
           </p>
           <p>Tech List: JavaScript, TypeScript, React</p>
