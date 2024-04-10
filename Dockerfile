@@ -19,19 +19,17 @@ RUN npm install husky@4.3.8 --save-dev
 # Set Git hooks path to .git/hooks
 RUN git config --local core.hooksPath .git/hooks
 
+# Build the React app
 RUN npm run build
+
+# Build Storybook and output it to a separate directory
+RUN npm run build-storybook --output-dir .storybook-static
 
 # Expose port, adjust based on your project requirements
 EXPOSE 5575
 
-# Build Storybook
-RUN npm run build-storybook
-
-# Install react-refresh
-RUN npm install -D react-refresh@0.11.0
-
 # Install http-server globally
 RUN npm install -g http-server
 
-# Run http-server with port 5575
-CMD ["http-server", "build", "-p", "5575"]
+# Run http-server with port 5575, serving the React app's build directory
+CMD ["http-server", "--www", "build", "--p", "5575"]
