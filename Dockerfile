@@ -24,9 +24,6 @@
 # # Expose port, adjust based on your project requirements
 # EXPOSE 5575
 
-# # Build Storybook
-# RUN npm run build-storybook
-
 # # Install react-refresh
 # RUN npm install -D react-refresh@0.11.0
 
@@ -58,7 +55,6 @@ RUN npm run build
 FROM node:14-alpine
 
 # Install http-server globally
-RUN npm run build-storybook
 
 RUN npm install -g http-server
 
@@ -76,4 +72,5 @@ COPY --from=build /usr/src/app/build /usr/src/app/build
 EXPOSE 5575
 
 # Command to run http-server and serve the built app
-CMD ["http-server", "-p", "5575", "-c-1", "app.tsx"]
+CMD ["http-server", "build", "-p", "5575", "-c-1"]
+
