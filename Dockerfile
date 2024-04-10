@@ -19,6 +19,8 @@ RUN npm install husky@4.3.8 --save-dev
 # Set Git hooks path to .git/hooks
 RUN git config --local core.hooksPath .git/hooks
 
+RUN npm run build
+
 # Expose port, adjust based on your project requirements
 EXPOSE 5575
 
@@ -30,8 +32,6 @@ RUN npm install -D react-refresh@0.11.0
 
 # Install http-server globally
 RUN npm install -g http-server
-
-RUN npm start
 
 # Run http-server with port 5575
 CMD ["http-server", "build", "-p", "5575"]
