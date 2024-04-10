@@ -23,13 +23,15 @@ RUN git config --local core.hooksPath .git/hooks
 EXPOSE 5575
 
 # Build Storybook
-# RUN npm run build-storybook
+RUN npm run build-storybook
 
 # Install react-refresh
 RUN npm install -D react-refresh@0.11.0
 
 # Install http-server globally
 RUN npm install -g http-server
+
+RUN npm start
 
 # Run http-server with port 5575
 CMD ["http-server", "build", "-p", "5575"]
