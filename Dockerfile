@@ -58,6 +58,8 @@ RUN npm run build
 FROM node:14-alpine
 
 # Install http-server globally
+RUN npm run build-storybook
+
 RUN npm install -g http-server
 
 RUN npm install husky@4.3.8 --save-dev
@@ -74,4 +76,4 @@ COPY --from=build /usr/src/app/build /usr/src/app/build
 EXPOSE 5575
 
 # Command to run http-server and serve the built app
-CMD ["http-server", "build", "-p", "5575"]
+CMD ["http-server", "-p", "5575", "-c-1", "app.tsx"]
